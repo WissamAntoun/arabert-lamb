@@ -506,9 +506,9 @@ def main(_):
     for input_pattern in FLAGS.input_file.split(","):
         input_files.extend(tf.gfile.Glob(input_pattern))
 
-    tf.logging.info("*** Input Files ***")
-    for input_file in input_files:
-        tf.logging.info("  %s" % input_file)
+    # tf.logging.info("*** Input Files ***")
+    # for input_file in input_files:
+    #     tf.logging.info("  %s" % input_file)
 
     tpu_cluster_resolver = None
     if FLAGS.use_tpu and FLAGS.tpu_name:
@@ -540,6 +540,7 @@ def main(_):
         use_one_hot_embeddings=FLAGS.use_tpu,
         optimizer=FLAGS.optimizer,
         poly_power=FLAGS.poly_power,
+        start_warmup_step=FLAGS.start_warmup_step
     )
 
     # If TPU is not available, this will fall back to normal Estimator on CPU
