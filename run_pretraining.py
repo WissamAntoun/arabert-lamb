@@ -86,6 +86,8 @@ flags.DEFINE_integer("num_train_steps", 100000, "Number of training steps.")
 
 flags.DEFINE_integer("num_warmup_steps", 10000, "Number of warmup steps.")
 
+flags.DEFINE_integer("start_warmup_step", 0, "The starting step of warmup.")
+
 flags.DEFINE_integer(
     "save_checkpoints_steps", 1000, "How often to save the model checkpoint."
 )
